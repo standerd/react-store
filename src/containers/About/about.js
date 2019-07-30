@@ -1,9 +1,9 @@
 import React from "react";
-import "./Landing.css";
+import "./about.css";
 
-const Landing = props => {
+const about = props => {
   return (
-    <div className="Landing">
+    <div className="about">
       <h1>About Our Service</h1>
       <p>
         We are a bike transport company that specialises in getting your beloved
@@ -41,4 +41,4 @@ const Landing = props => {
   );
 };
 
-export default Landing;
+export default about;

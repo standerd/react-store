@@ -1,0 +1,14 @@
+.about {
+  padding: 30px 30px;
+  color: white;
+  text-align: center;
+  background-color: #282c34;
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.Landing p {
+  width: 50%;
+  margin: 0 auto;
+}

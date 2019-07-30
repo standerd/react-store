@@ -1,23 +1,63 @@
-import React from "react";
-import Header from "./components/Header";
+import React, { Component } from "react";
+import UserState from "./containers/UserState/UserState";
 import "./App.css";
-import Landing from "./components/Landing/Landing";
-import Products from "./components/Products/Products";
+import Landing from "./containers/About/about";
+import Products from "./containers/Products/Products";
+import NavBar from "./containers/Navbar/navBar";
+import Profile from "./containers/profile/profile";
+import { Route, withRouter } from "react-router-dom";
 
-const isLoggedIn = true;
+class App extends Component {
+  state = {
+    isLoggedIn: true,
+    userName: "Dewald",
+    id: "8314112353323",
+    eMail: "username@gmail.com",
+    profession: "Software Developer"
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Header isLoggedIn={isLoggedIn} userName="Dewald" />
-      </header>
+  render() {
+    console.log(this.props.location.pathname);
+    return (
+      <div className="App">
+        <nav>
+          <NavBar nav={this.props.location.pathname} />
+        </nav>
+        <header className="App-header">
+          <Route
+            path="/"
+            exact
+            component={() => (
+              <UserState
+                isLoggedIn={this.state.isLoggedIn}
+                userName={this.state.userName}
+              />
+            )}
+          />
+        </header>
 
-      <Landing welcome="Welcome to Our Site" />
+        <Route
+          path="/about"
+          component={() => <Landing welcome="Welcome to Our Site" />}
+        />
+        <Route
+          path="/profile"
+          component={() => (
+            <Profile
+              name={this.state.userName}
+              id={this.state.id}
+              mail={this.state.eMail}
+              prof={this.state.profession}
+            />
+          )}
+        />
 
-      <Products />
-    </div>
-  );
+        <Route path="/products" component={Products} />
+      </div>
+    );
+  }
+
+  r;
 }
 
-export default App;
+export default withRouter(App);

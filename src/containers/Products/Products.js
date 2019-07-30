@@ -12,13 +12,14 @@ const Products = props => {
     { event: "Tour of Durban", date: "08 May 2020", logo: img3 }
   ];
 
-  let cardContent = transport.map(card => {
+  let cardContent = transport.map((card, i) => {
     return (
       <Card
         bg="light"
         style={{
           width: "30%"
         }}
+        key={i}
       >
         <Card.Img
           style={{ height: "250px", marginTop: "10px" }}
@@ -28,7 +29,9 @@ const Products = props => {
         <Card.Body>
           <Card.Title>{card.event}</Card.Title>
           <Card.Text>
-            <p>{card.date}</p>
+            <span>{card.date}</span>
+            <br />
+            <br />
             <button>More Info</button>
           </Card.Text>
         </Card.Body>
@@ -38,12 +41,6 @@ const Products = props => {
 
   return (
     <div className="Header">
-      <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous"
-      />
       <h1>Our Upcoming Transport Events</h1>
       <div className="Products">{cardContent}</div>
     </div>

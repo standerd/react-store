@@ -1,9 +1,10 @@
 import React from "react";
-import logo from "../images/logo.jpg";
+import logo from "../../images/logo.jpg";
+import "../../App.css";
 
-const Header = props => {
+const userState = props => {
   return (
-    <div>
+    <div className="header">
       <img
         style={{ width: "200px", height: "150px", marginBottom: "30px" }}
         src={logo}
@@ -18,4 +19,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export default userState;
