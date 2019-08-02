@@ -5,7 +5,10 @@ import img2 from "../../images/amashova.png";
 import img3 from "../../images/tourDBN.jpg";
 import "./Products.css";
 
-const Products = props => {
+const Products = () => {
+  // transport events variable - could also have used state from App.js,
+  // wanted to just try both.
+
   let transport = [
     { event: "Cape Town Cycle Tour", date: "10 March 2020", logo: img1 },
     { event: "Amashova Durban", date: "10 October 2019", logo: img2 },
@@ -13,6 +16,9 @@ const Products = props => {
   ];
 
   let cardContent = transport.map((card, i) => {
+    //map through the transport array variable set and generates a Bootstrap card
+    // component.
+
     return (
       <Card
         bg="light"

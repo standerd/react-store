@@ -4,6 +4,9 @@ import { NavLink, withRouter } from "react-router-dom";
 
 const navBar = props => {
   let navState = props.nav;
+
+  // Variables setup for NAVBAR tabs, this make loading easier to manage
+  // during the if check for which tabs should be active based on the active tab.
   let products = (
     <li>
       <NavLink
@@ -37,6 +40,8 @@ const navBar = props => {
       </NavLink>
     </li>
   );
+
+  // if check based on the active page and setting the navbar visible tabs accordingly.
 
   if (navState === "/about") {
     return (

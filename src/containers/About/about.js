@@ -1,7 +1,8 @@
 import React from "react";
 import "./about.css";
 
-const about = props => {
+const about = () => {
+  // Basic About Component no props received
   return (
     <div className="about">
       <h1>About Our Service</h1>

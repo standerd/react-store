@@ -2,6 +2,7 @@ import React from "react";
 import "./profile.css";
 
 const profile = props => (
+  // user profile component, received props from App.js
   <div className="profile">
     <h1>Your Profile Details</h1>
     <ul>

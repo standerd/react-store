@@ -20,6 +20,7 @@ class App extends Component {
     console.log(this.props.location.pathname);
     return (
       <div className="App">
+        {/* NAVBAR Componentalways loads */}
         <nav>
           <NavBar nav={this.props.location.pathname} />
         </nav>
@@ -36,6 +37,7 @@ class App extends Component {
           />
         </header>
 
+        {/* Balance of components only loads on route change */}
         <Route
           path="/about"
           component={() => <Landing welcome="Welcome to Our Site" />}

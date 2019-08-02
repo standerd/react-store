@@ -3,6 +3,7 @@ import logo from "../../images/logo.jpg";
 import "../../App.css";
 
 const userState = props => {
+  // main landing/home component based on userLogin Status
   return (
     <div className="header">
       <img
